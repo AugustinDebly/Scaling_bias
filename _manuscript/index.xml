@@ -75,19 +75,26 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
   (<xref alt="Underwood 2001" rid="ref-underwood_microphytobenthos_2001" ref-type="bibr">Underwood
   2001</xref>). They can be associated to mud and sand, i.e. inorganic
   particles with size between 4 and 63µm, and 63 and 2000µm,
-  respectively (Wentworth, 1922). In these soft-bottom sediments, MPB
-  can be the main primary producer, notably in turbid estuaries.</p>
-  <p>MPB provides several ecosystem services (Julie A. Hope et al.,
-  2020). In addition to its contribution to carbon fluxes, estimated
-  between 30 and 230 g C/m²/year (Heip et al., 1995; Park et al., 2024),
-  it stabilizes the sediment through the secretion of extracellular
-  polymeric substances (EPS) (Gibbs, 1983; Riethmüller et al., 2000;
-  Stal, 2010; Huiming et al., 2011; Fang et al., 2012; Gerbersdorf et
-  al., 2020), and therefore reduces coastal erosion (J.A. Hope et al.,
-  2020). It is a key element of food webs (Deppe, 1999; Aberle-Malzahn,
-  2004; Dauvin and Desroy, 2005), and it plays an important role in
-  nutrient cycling, increasing water quality. It can also be used as a
-  bioindicator of water quality (Oiry and Barillé, 2021)</p>
+  respectively
+  (<xref alt="Wentworth 1922" rid="ref-wentworth_scale_1922" ref-type="bibr">Wentworth
+  1922</xref>). In these soft-bottom sediments, MPB can be the main
+  primary producer, notably in turbid estuaries.</p>
+  <p>MPB provides several ecosystem services
+  (<xref alt="Hope, Paterson, and Thrush 2020" rid="ref-hope_role_2020" ref-type="bibr">Hope,
+  Paterson, and Thrush 2020</xref>). In addition to its contribution to
+  carbon fluxes, estimated between 30 and 230 g C/m²/year
+  (<xref alt="Heip et al. 1995" rid="ref-heip_production_1995" ref-type="bibr">Heip
+  et al. 1995</xref> ;
+  <xref alt="Park et al. 2024" rid="ref-park_harnessing_2024" ref-type="bibr">Park
+  et al. 2024</xref>), it stabilizes the sediment through the secretion
+  of extracellular polymeric substances (EPS) (Gibbs, 1983; Riethmüller
+  et al., 2000; Stal, 2010; Huiming et al., 2011; Fang et al., 2012;
+  Gerbersdorf et al., 2020), and therefore reduces coastal erosion (J.A.
+  Hope et al., 2020). It is a key element of food webs (Deppe, 1999;
+  Aberle-Malzahn, 2004; Dauvin and Desroy, 2005), and it plays an
+  important role in nutrient cycling, increasing water quality. It can
+  also be used as a bioindicator of water quality (Oiry and Barillé,
+  2021)</p>
 </sec>
 <sec id="material-and-methods">
   <title>Material and methods</title>
@@ -103,6 +110,24 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
 <back>
 <ref-list>
   <title>References</title>
+  <ref id="ref-wentworth_scale_1922">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Wentworth</surname><given-names>Chester K.</given-names></name>
+      </person-group>
+      <article-title>A Scale of Grade and Class Terms for Clastic Sediments</article-title>
+      <source>The Journal of Geology</source>
+      <year iso-8601-date="1922-07">1922</year><month>07</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>30</volume>
+      <issue>5</issue>
+      <issn>0022-1376</issn>
+      <uri>https://www.journals.uchicago.edu/doi/abs/10.1086/622910</uri>
+      <pub-id pub-id-type="doi">10.1086/622910</pub-id>
+      <fpage>377</fpage>
+      <lpage>392</lpage>
+    </element-citation>
+  </ref>
   <ref id="ref-underwood_microphytobenthos_2001">
     <element-citation publication-type="chapter">
       <person-group person-group-type="author">
@@ -122,6 +147,78 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
       <pub-id pub-id-type="doi">10.1006/rwos.2001.0213</pub-id>
       <fpage>1770</fpage>
       <lpage>1777</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-park_harnessing_2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Park</surname><given-names>Jihae</given-names></name>
+        <name><surname>Lee</surname><given-names>Hojun</given-names></name>
+        <name><surname>Asselman</surname><given-names>Jana</given-names></name>
+        <name><surname>Janssen</surname><given-names>Colin</given-names></name>
+        <name><surname>Depuydt</surname><given-names>Stephen</given-names></name>
+        <name><surname>De Saeger</surname><given-names>Jonas</given-names></name>
+        <name><surname>Friedl</surname><given-names>Thomas</given-names></name>
+        <name><surname>Sabbe</surname><given-names>Koen</given-names></name>
+        <name><surname>Vyverman</surname><given-names>Wim</given-names></name>
+        <name><surname>Philippart</surname><given-names>Catharina J. M.</given-names></name>
+        <name><surname>Pitarch</surname><given-names>Jaime</given-names></name>
+        <name><surname>Heynderickx</surname><given-names>Philippe M.</given-names></name>
+        <name><surname>Wu</surname><given-names>Di</given-names></name>
+        <name><surname>Ronsse</surname><given-names>Frederik</given-names></name>
+        <name><surname>De Neve</surname><given-names>Wesley</given-names></name>
+        <name><surname>Pandey</surname><given-names>Lalit K.</given-names></name>
+        <name><surname>Park</surname><given-names>Joon Tae</given-names></name>
+        <name><surname>Han</surname><given-names>Taejun</given-names></name>
+      </person-group>
+      <article-title>Harnessing the power of tidal flat diatoms to combat climate change</article-title>
+      <source>Critical Reviews in Environmental Science and Technology</source>
+      <year iso-8601-date="2024">2024</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>0</volume>
+      <issue>0</issue>
+      <issn>1064-3389</issn>
+      <uri>https://doi.org/10.1080/10643389.2024.2315004</uri>
+      <pub-id pub-id-type="doi">10.1080/10643389.2024.2315004</pub-id>
+      <fpage>1</fpage>
+      <lpage>22</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-hope_role_2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Hope</surname><given-names>Julie A.</given-names></name>
+        <name><surname>Paterson</surname><given-names>David M.</given-names></name>
+        <name><surname>Thrush</surname><given-names>Simon F.</given-names></name>
+      </person-group>
+      <article-title>The role of microphytobenthos in soft-sediment ecological networks and their contribution to the delivery of multiple ecosystem services</article-title>
+      <source>Journal of Ecology</source>
+      <year iso-8601-date="2020">2020</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-06-20">2024</year><month>06</month><day>20</day></date-in-citation>
+      <volume>108</volume>
+      <issue>3</issue>
+      <issn>1365-2745</issn>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/1365-2745.13322</uri>
+      <pub-id pub-id-type="doi">10.1111/1365-2745.13322</pub-id>
+      <fpage>815</fpage>
+      <lpage>830</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-heip_production_1995">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Heip</surname><given-names>C. H. R.</given-names></name>
+        <name><surname>Goosen</surname><given-names>N. K.</given-names></name>
+        <name><surname>Herman</surname><given-names>P. M. J.</given-names></name>
+        <name><surname>Kromkamp</surname><given-names>J.</given-names></name>
+        <name><surname>Middelburg</surname><given-names>J. J.</given-names></name>
+        <name><surname>Soetaert</surname><given-names>K.</given-names></name>
+      </person-group>
+      <article-title>Production and consumption of biological particles in temperate tidal estuaries</article-title>
+      <source>Oceanography and Marine Biology: An Annual Review</source>
+      <year iso-8601-date="1995">1995</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-06-20">2024</year><month>06</month><day>20</day></date-in-citation>
+      <uri>https://www.lifewatch.be/en/imis?module=ref&amp;refid=8311&amp;printversion=1&amp;dropIMIStitle=1</uri>
     </element-citation>
   </ref>
 </ref-list>
