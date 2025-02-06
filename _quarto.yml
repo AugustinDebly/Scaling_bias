@@ -16,7 +16,6 @@ format:
           }
         </style>
   docx: default
-  jats: default
   pdf: default
 
 execute:
