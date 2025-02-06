@@ -1,5 +1,5 @@
 ---
-title: Scaling_bias
+title: Analyzing Satellite Scaling Bias Using Drone Data: Application to Microphytobenthos Studies
 authors:
   - name: Augustin Debly
     affiliation: Institut des Substances et Organismes de la Mer, ISOMer, Nantes Université, UR 2160, F-44000 Nantes, France
