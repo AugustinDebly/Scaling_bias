@@ -8,6 +8,13 @@ format:
   html:
     comments:
       hypothesis: true
+    header-includes:
+      - |
+        <style>
+          body {
+            text-align: justify;
+          }
+        </style>
   docx: default
   jats: default
   pdf: default
