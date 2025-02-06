@@ -87,14 +87,26 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
   et al. 1995</xref> ;
   <xref alt="Park et al. 2024" rid="ref-park_harnessing_2024" ref-type="bibr">Park
   et al. 2024</xref>), it stabilizes the sediment through the secretion
-  of extracellular polymeric substances (EPS) (Gibbs, 1983; Riethmüller
-  et al., 2000; Stal, 2010; Huiming et al., 2011; Fang et al., 2012;
-  Gerbersdorf et al., 2020), and therefore reduces coastal erosion (J.A.
-  Hope et al., 2020). It is a key element of food webs (Deppe, 1999;
-  Aberle-Malzahn, 2004; Dauvin and Desroy, 2005), and it plays an
-  important role in nutrient cycling, increasing water quality. It can
-  also be used as a bioindicator of water quality (Oiry and Barillé,
-  2021)</p>
+  of extracellular polymeric substances (EPS)
+  (<xref alt="Gibbs 1983" rid="ref-gibbs_effect_1983" ref-type="bibr">Gibbs
+  1983</xref> ;
+  <xref alt="Riethmüller et al. 2000" rid="ref-riethmuller_chlorophyll_2000" ref-type="bibr">Riethmüller
+  et al. 2000</xref> ;
+  <xref alt="Stal 2010" rid="ref-stal_microphytobenthos_2010" ref-type="bibr">Stal
+  2010</xref> ;
+  <xref alt="Huiming, Hongwei, and Minghong 2011" rid="ref-huiming_floc_2011" ref-type="bibr">Huiming,
+  Hongwei, and Minghong 2011</xref> ;
+  <xref alt="Fang et al. 2012" rid="ref-fang_effect_2012" ref-type="bibr">Fang
+  et al. 2012</xref> ;
+  <xref alt="Gerbersdorf et al. 2020" rid="ref-gerbersdorf_exploring_2020" ref-type="bibr">Gerbersdorf
+  et al. 2020</xref>), and therefore reduces coastal erosion
+  (<xref alt="Hope, Paterson, and Thrush 2020" rid="ref-hope_role_2020" ref-type="bibr">Hope,
+  Paterson, and Thrush 2020</xref>). It is a key element of food webs
+  (Deppe, 1999; Aberle-Malzahn, 2004; Dauvin and Desroy, 2005), and it
+  plays an important role in nutrient cycling, increasing water quality.
+  It can also be used as a bioindicator of water quality
+  (<xref alt="Oiry and Barillé 2021" rid="ref-oiry_using_2021" ref-type="bibr">Oiry
+  and Barillé 2021</xref>).</p>
 </sec>
 <sec id="material-and-methods">
   <title>Material and methods</title>
@@ -110,6 +122,111 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
 <back>
 <ref-list>
   <title>References</title>
+  <ref id="ref-gerbersdorf_exploring_2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Gerbersdorf</surname><given-names>Sabine Ulrike</given-names></name>
+        <name><surname>Koca</surname><given-names>Kaan</given-names></name>
+        <name><surname>Beer</surname><given-names>Dirk de</given-names></name>
+        <name><surname>Chennu</surname><given-names>Arjun</given-names></name>
+        <name><surname>Noss</surname><given-names>Christian</given-names></name>
+        <name><surname>Risse-Buhl</surname><given-names>Ute</given-names></name>
+        <name><surname>Weitere</surname><given-names>Markus</given-names></name>
+        <name><surname>Eiff</surname><given-names>Olivier</given-names></name>
+        <name><surname>Wagner</surname><given-names>Michael</given-names></name>
+        <name><surname>Aberle</surname><given-names>Jochen</given-names></name>
+        <name><surname>Schweikert</surname><given-names>Michael</given-names></name>
+        <name><surname>Terheiden</surname><given-names>Kristina</given-names></name>
+      </person-group>
+      <article-title>Exploring flow-biofilm-sediment interactions: Assessment of current status and future challenges</article-title>
+      <source>Water Research</source>
+      <year iso-8601-date="2020-10">2020</year><month>10</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>185</volume>
+      <issn>0043-1354</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0043135420307193</uri>
+      <pub-id pub-id-type="doi">10.1016/j.watres.2020.116182</pub-id>
+      <fpage>116182</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-gibbs_effect_1983">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Gibbs</surname><given-names>Ronald J.</given-names></name>
+      </person-group>
+      <article-title>Effect of natural organic coatings on the coagulation of particles</article-title>
+      <source>Environmental Science &amp; Technology</source>
+      <year iso-8601-date="1983-04">1983</year><month>04</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>17</volume>
+      <issue>4</issue>
+      <issn>0013-936X, 1520-5851</issn>
+      <uri>https://pubs.acs.org/doi/abs/10.1021/es00110a011</uri>
+      <pub-id pub-id-type="doi">10.1021/es00110a011</pub-id>
+      <fpage>237</fpage>
+      <lpage>240</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-stal_microphytobenthos_2010">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Stal</surname><given-names>Lucas J.</given-names></name>
+      </person-group>
+      <article-title>Microphytobenthos as a biogeomorphological force in intertidal sediment stabilization</article-title>
+      <source>Ecological Engineering</source>
+      <year iso-8601-date="2010-02">2010</year><month>02</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>36</volume>
+      <issue>2</issue>
+      <issn>0925-8574</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0925857409000160</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ecoleng.2008.12.032</pub-id>
+      <fpage>236</fpage>
+      <lpage>245</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-fang_effect_2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Fang</surname><given-names>Hongwei</given-names></name>
+        <name><surname>Zhao</surname><given-names>Huiming</given-names></name>
+        <name><surname>Shang</surname><given-names>Qianqian</given-names></name>
+        <name><surname>Chen</surname><given-names>Minghong</given-names></name>
+      </person-group>
+      <article-title>Effect of biofilm on the rheological properties of cohesive sediment</article-title>
+      <source>Hydrobiologia</source>
+      <year iso-8601-date="2012-09">2012</year><month>09</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>694</volume>
+      <issue>1</issue>
+      <issn>1573-5117</issn>
+      <uri>https://doi.org/10.1007/s10750-012-1140-y</uri>
+      <pub-id pub-id-type="doi">10.1007/s10750-012-1140-y</pub-id>
+      <fpage>171</fpage>
+      <lpage>181</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-huiming_floc_2011">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Huiming</surname><given-names>Zhao</given-names></name>
+        <name><surname>Hongwei</surname><given-names>Fang</given-names></name>
+        <name><surname>Minghong</surname><given-names>Chen</given-names></name>
+      </person-group>
+      <article-title>Floc architecture of bioflocculation sediment by ESEM and CLSM</article-title>
+      <source>Scanning</source>
+      <year iso-8601-date="2011">2011</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>33</volume>
+      <issue>6</issue>
+      <issn>1932-8745</issn>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1002/sca.20247</uri>
+      <pub-id pub-id-type="doi">10.1002/sca.20247</pub-id>
+      <fpage>437</fpage>
+      <lpage>445</lpage>
+    </element-citation>
+  </ref>
   <ref id="ref-wentworth_scale_1922">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -184,6 +301,24 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
       <lpage>22</lpage>
     </element-citation>
   </ref>
+  <ref id="ref-oiry_using_2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Oiry</surname><given-names>Simon</given-names></name>
+        <name><surname>Barillé</surname><given-names>Laurent</given-names></name>
+      </person-group>
+      <article-title>Using sentinel-2 satellite imagery to develop microphytobenthos-based water quality indices in estuaries</article-title>
+      <source>Ecological Indicators</source>
+      <year iso-8601-date="2021-02">2021</year><month>02</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <volume>121</volume>
+      <issn>1470-160X</issn>
+      <uri>https://www.sciencedirect.com/science/article/pii/S1470160X20311237</uri>
+      <pub-id pub-id-type="doi">10.1016/j.ecolind.2020.107184</pub-id>
+      <fpage>107184</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
   <ref id="ref-hope_role_2020">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -219,6 +354,27 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
       <year iso-8601-date="1995">1995</year>
       <date-in-citation content-type="access-date"><year iso-8601-date="2024-06-20">2024</year><month>06</month><day>20</day></date-in-citation>
       <uri>https://www.lifewatch.be/en/imis?module=ref&amp;refid=8311&amp;printversion=1&amp;dropIMIStitle=1</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-riethmuller_chlorophyll_2000">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Riethmüller</surname><given-names>R.</given-names></name>
+        <name><surname>Heineke</surname><given-names>M.</given-names></name>
+        <name><surname>Kühl</surname><given-names>H.</given-names></name>
+        <name><surname>Keuker-Rüdiger</surname><given-names>R.</given-names></name>
+      </person-group>
+      <article-title>Chlorophyll a concentration as an index of sediment surface stabilisation by microphytobenthos?</article-title>
+      <source>Continental Shelf Research</source>
+      <year iso-8601-date="2000-07">2000</year><month>07</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-06-20">2024</year><month>06</month><day>20</day></date-in-citation>
+      <volume>20</volume>
+      <issue>10-11</issue>
+      <issn>02784343</issn>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0278434300000273</uri>
+      <pub-id pub-id-type="doi">10.1016/S0278-4343(00)00027-3</pub-id>
+      <fpage>1351</fpage>
+      <lpage>1372</lpage>
     </element-citation>
   </ref>
 </ref-list>
