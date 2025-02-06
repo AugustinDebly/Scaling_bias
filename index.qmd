@@ -22,7 +22,7 @@ MPB provides several ecosystem services [@hope_role_2020]. In addition to its co
 
 ## The use of a proxy
 
-#Bias 
+## Bias 
 
 ## Present study 
 
