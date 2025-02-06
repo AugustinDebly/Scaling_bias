@@ -77,6 +77,39 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -149,10 +182,10 @@ The present study focuses on microphytobenthos (MPB) colonizing
 estuarine intertidal zones. MPB refers to photosynthetic unicellular
 microalgae forming biofilms at the sediment surface during low tides.
 This group includes diatoms, euglenids, cyanobacteria, and chlorophyta
-(Underwood, 2001). They can be associated to mud and sand,
-i.e.~inorganic particles with size between 4 and 63µm, and 63 and
-2000µm, respectively (Wentworth, 1922). In these soft-bottom sediments,
-MPB can be the main primary producer, notably in turbid estuaries.
+(Underwood 2001). They can be associated to mud and sand, i.e.~inorganic
+particles with size between 4 and 63µm, and 63 and 2000µm, respectively
+(Wentworth, 1922). In these soft-bottom sediments, MPB can be the main
+primary producer, notably in turbid estuaries.
 
 MPB provides several ecosystem services (Julie A. Hope et al., 2020). In
 addition to its contribution to carbon fluxes, estimated between 30 and
@@ -172,7 +205,17 @@ and Barillé, 2021)
 
 \section{Discussion}\label{discussion}
 
-\section{References}\label{references}
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-underwood_microphytobenthos_2001}
+Underwood, G. J. C. 2001. {``Microphytobenthos.''} In \emph{Encyclopedia
+of {Ocean} {Sciences}}, edited by John H. Steele, 1770--77. Oxford:
+Academic Press. \url{https://doi.org/10.1006/rwos.2001.0213}.
+
+\end{CSLReferences}
 
 
 
