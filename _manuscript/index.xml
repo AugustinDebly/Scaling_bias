@@ -103,9 +103,14 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
   et al. 2020</xref>), and therefore reduces coastal erosion
   (<xref alt="Hope, Paterson, and Thrush 2020" rid="ref-hope_role_2020" ref-type="bibr">Hope,
   Paterson, and Thrush 2020</xref>). It is a key element of food webs
-  (Deppe, 1999; Aberle-Malzahn, 2004; Dauvin and Desroy, 2005), and it
-  plays an important role in nutrient cycling, increasing water quality.
-  It can also be used as a bioindicator of water quality
+  (<xref alt="Deppe 1999" rid="ref-deppe_intertidal_1999" ref-type="bibr">Deppe
+  1999</xref> ;
+  <xref alt="Aberle-Malzahn 2004" rid="ref-aberle-malzahn_microphytobenthos_2004" ref-type="bibr">Aberle-Malzahn
+  2004</xref> ;
+  <xref alt="Dauvin and Desroy 2005" rid="ref-dauvin_food_2005" ref-type="bibr">Dauvin
+  and Desroy 2005</xref>), and it plays an important role in nutrient
+  cycling, increasing water quality. It can also be used as a
+  bioindicator of water quality
   (<xref alt="Oiry and Barillé 2021" rid="ref-oiry_using_2021" ref-type="bibr">Oiry
   and Barillé 2021</xref>).</p>
 </sec>
@@ -318,6 +323,46 @@ Nantes Université, UR 2160, F-44000 Nantes, France</institution>
       <pub-id pub-id-type="doi">10.1016/j.ecolind.2020.107184</pub-id>
       <fpage>107184</fpage>
       <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-aberle-malzahn_microphytobenthos_2004">
+    <element-citation publication-type="thesis">
+      <person-group person-group-type="author">
+        <name><surname>Aberle-Malzahn</surname><given-names>Nicole</given-names></name>
+      </person-group>
+      <article-title>The microphytobenthos and its role in aquatic food webs</article-title>
+      <publisher-name>Christian-Albrechts-Universität Kiel</publisher-name>
+      <year iso-8601-date="2004-05">2004</year><month>05</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-03-07">2024</year><month>03</month><day>07</day></date-in-citation>
+      <uri>https://pure.mpg.de/pubman/faces/ViewItemOverviewPage.jsp?itemId=item_1507232</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-dauvin_food_2005">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Dauvin</surname><given-names>Jean-Claude</given-names></name>
+        <name><surname>Desroy</surname><given-names>Nicolas</given-names></name>
+      </person-group>
+      <article-title>The food web in the lower part of the Seine estuary: A synthesis of existing knowledge</article-title>
+      <source>Hydrobiologia</source>
+      <year iso-8601-date="2005-05">2005</year><month>05</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2024-06-13">2024</year><month>06</month><day>13</day></date-in-citation>
+      <volume>540</volume>
+      <issue>1</issue>
+      <issn>1573-5117</issn>
+      <uri>https://doi.org/10.1007/s10750-004-7101-3</uri>
+      <pub-id pub-id-type="doi">10.1007/s10750-004-7101-3</pub-id>
+      <fpage>13</fpage>
+      <lpage>27</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-deppe_intertidal_1999">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Deppe</surname><given-names>Frauke</given-names></name>
+      </person-group>
+      <article-title>Intertidal Mudflats Worldwide</article-title>
+      <year iso-8601-date="1999">1999</year>
     </element-citation>
   </ref>
   <ref id="ref-hope_role_2020">
