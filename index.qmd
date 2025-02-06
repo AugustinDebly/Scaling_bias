@@ -1,0 +1,20 @@
+---
+title: Scaling_bias
+authors:
+  - name: Augustin Debly
+    affiliation: Institut des Substances et Organismes de la Mer, ISOMer, Nantes Université, UR 2160, F-44000 Nantes, France
+    orcid: "0009-0000-7194-7099"
+    roles: writing
+    corresponding: true
+bibliography: references.bib
+---
+
+# Introduction
+
+# Material and methods
+
+# Results
+
+# Discussion
+
+# References
