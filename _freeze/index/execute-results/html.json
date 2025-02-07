@@ -1,0 +1,17 @@
+{
+  "hash": "1fda3f717cf4e469cbf0b7fd3e946611",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Analyzing Satellite Scaling Bias Using Drone Data, Application to Microphytobenthos Studies\nauthors:\n  - name: Augustin Debly\n    affiliation: Institut des Substances et Organismes de la Mer, ISOMer, Nantes Université, UR 2160, F-44000 Nantes, France\n    orcid: \"0009-0000-7194-7099\"\n    roles: writing\n    corresponding: true\nbibliography: references.bib\n---\n\n\n# Introduction\n## MPB\nThe present study focuses on microphytobenthos (MPB) colonizing estuarine intertidal zones. MPB refers to photosynthetic unicellular microalgae forming biofilms at the sediment surface during low tides. This group includes diatoms, euglenids, cyanobacteria, and chlorophyta [@underwood_microphytobenthos_2001]. They can be associated to mud and sand, i.e. inorganic particles with size between 4 and 63µm, and 63 and 2000µm, respectively [@wentworth_scale_1922]. In these soft-bottom sediments, MPB can be the main primary producer, notably in turbid estuaries.\n\n## Ecological services\nMPB provides several ecosystem services [@hope_role_2020]. In addition to its contribution to carbon fluxes, estimated between 30 and 230 g C/m²/year [@heip_production_1995 ;@park_harnessing_2024], it stabilizes the sediment through the secretion of extracellular polymeric substances (EPS) [@gibbs_effect_1983 ; @riethmuller_chlorophyll_2000 ; @stal_microphytobenthos_2010 ; @huiming_floc_2011 ; @fang_effect_2012 ; @gerbersdorf_exploring_2020], and therefore reduces coastal erosion [@hope_role_2020]. It is a key element of food webs [@deppe_intertidal_1999 ; @aberle-malzahn_microphytobenthos_2004 ; @dauvin_food_2005], and it plays an important role in nutrient cycling, increasing water quality. It can also be used as a bioindicator of water quality [@oiry_using_2021].\n\n## Spatial structure\nThe MPB exhibits spatial variability at different scales\n\n\n::: {#cell-fig-airquality .cell}\n\n```{.r .cell-code .hidden}\nxmin = -7\nxmax = 5\n\nymin = 0\nymax = 1\n\nplot(c(),c(),xlab = \"Spatial resolution\",ylab = \"\",xaxt=\"n\",yaxt=\"n\",xlim=c(xmin,xmax),ylim = c(ymin,ymax),xaxs=\"i\",yaxs=\"i\")\n\nX = 10^(seq(xmin,xmax))\n\nfor(x in X){\n  lines(log10(c(x,x)),c(ymin,ymax),lty=1,col=rgb(0,0,0,0.2))\n}\n\nfor(x in c(2*X,3*X,4*X,5*X,6*X,7*X,8*X,9*X)){\n  lines(log10(c(x,x)),c(ymin,ymax),lty=2,col=rgb(0,0,0,0.1))\n}\n\naxis(1,at=log10(X),labels = c(\"100 nm\",\"1 µm\",\"10 µm\",\"100 µm\",\"1 mm\",\"1 cm\",\"1 dm\",\"1 m\",\"10 m\",\"100 m\",\"1 km\",\"10 km\",\"100 km\"))\n\nplot_sensor <- function(xmin_sensor,xmax_sensor,y,size_branche){\n  lines(c(xmin_sensor,xmax_sensor),c(y,y))\n  lines(c(xmin_sensor,xmin_sensor),c(y-size_branche/2,y+size_branche/2))\n  lines(c(xmax_sensor,xmax_sensor),c(y-size_branche/2,y+size_branche/2))\n}\n\nplot_sensor(-6,2,0.5,0.05)\n```\n\n::: {.cell-output-display}\n![Temperature and ozone level.](index_files/figure-html/fig-airquality-1.png){#fig-airquality width=672}\n:::\n:::\n\n\n## MPB & RS\n\n## The use of a proxy\n\n## Bias \n\n## Present study \n\n# Material and methods\n## Simulating a satellite dataset from a drone dataset\nThe choice has been made to simulate coarser dataset from drone fine-scale\n\n# Results\n\n# Discussion\n\n# References\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
