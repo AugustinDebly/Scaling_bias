@@ -16,7 +16,8 @@ The present study focuses on microphytobenthos (MPB) colonizing estuarine intert
 ## Ecological services
 MPB provides several ecosystem services [@hope_role_2020]. In addition to its contribution to carbon fluxes, estimated between 30 and 230 g C/m²/year [@heip_production_1995 ;@park_harnessing_2024], it stabilizes the sediment through the secretion of extracellular polymeric substances (EPS) [@gibbs_effect_1983 ; @riethmuller_chlorophyll_2000 ; @stal_microphytobenthos_2010 ; @huiming_floc_2011 ; @fang_effect_2012 ; @gerbersdorf_exploring_2020], and therefore reduces coastal erosion [@hope_role_2020]. It is a key element of food webs [@deppe_intertidal_1999 ; @aberle-malzahn_microphytobenthos_2004 ; @dauvin_food_2005], and it plays an important role in nutrient cycling, increasing water quality. It can also be used as a bioindicator of water quality [@oiry_using_2021].
 
-## Spatial structure 
+## Spatial structure
+The MPB exhibits spatial variability at different scales
 
 ## MPB & RS
 
