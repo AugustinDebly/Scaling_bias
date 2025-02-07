@@ -10,23 +10,22 @@ bibliography: references.bib
 ---
 
 # Introduction
+
 ## MPB
+
 The present study focuses on microphytobenthos (MPB) colonizing estuarine intertidal zones. MPB refers to photosynthetic unicellular microalgae forming biofilms at the sediment surface during low tides. This group includes diatoms, euglenids, cyanobacteria, and chlorophyta [@underwood_microphytobenthos_2001]. They can be associated to mud and sand, i.e. inorganic particles with size between 4 and 63µm, and 63 and 2000µm, respectively [@wentworth_scale_1922]. In these soft-bottom sediments, MPB can be the main primary producer, notably in turbid estuaries.
 
 ## Ecological services
-MPB provides several ecosystem services [@hope_role_2020]. In addition to its contribution to carbon fluxes, estimated between 30 and 230 g C/m²/year [@heip_production_1995 ;@park_harnessing_2024], it stabilizes the sediment through the secretion of extracellular polymeric substances (EPS) [@gibbs_effect_1983 ; @riethmuller_chlorophyll_2000 ; @stal_microphytobenthos_2010 ; @huiming_floc_2011 ; @fang_effect_2012 ; @gerbersdorf_exploring_2020], and therefore reduces coastal erosion [@hope_role_2020]. It is a key element of food webs [@deppe_intertidal_1999 ; @aberle-malzahn_microphytobenthos_2004 ; @dauvin_food_2005], and it plays an important role in nutrient cycling, increasing water quality. It can also be used as a bioindicator of water quality [@oiry_using_2021].
+
+MPB provides several ecosystem services [@hope_role_2020]. In addition to its contribution to carbon fluxes, estimated between 30 and 230 g C/m²/year [@heip_production_1995; @park_harnessing_2024], it stabilizes the sediment through the secretion of extracellular polymeric substances (EPS) [@gibbs_effect_1983; @riethmuller_chlorophyll_2000; @stal_microphytobenthos_2010; @huiming_floc_2011; @fang_effect_2012; @gerbersdorf_exploring_2020], and therefore reduces coastal erosion [@hope_role_2020]. It is a key element of food webs [@deppe_intertidal_1999; @aberle-malzahn_microphytobenthos_2004; @dauvin_food_2005], and it plays an important role in nutrient cycling, increasing water quality. It can also be used as a bioindicator of water quality [@oiry_using_2021].
 
 ## Spatial structure
+
 The MPB exhibits spatial variability at different scales
 
 ```{r}
 #| label: fig-resolutions
 #| fig-cap: "Resolutions of x different sensors cross represented with the different spatial scales of MPB"
-#| warning: false
-#| cache: false
-#| echo: false
-#| out.width: "80%"
-#| fig-align: "center"
 
 xmin = -7
 xmax = 5
@@ -56,19 +55,24 @@ plot_sensor <- function(xmin_sensor,xmax_sensor,y,size_branche){
   lines(c(xmax_sensor,xmax_sensor),c(y-size_branche/2,y+size_branche/2))
 }
 
-plot_sensor(-6,2,0.5,0.05)
+plot_sensor(-6,2,0.1,0.05)
+plot_sensor(-5,3,0.2,0.05)
+plot_sensor(-4,4,0.3,0.05)
+plot_sensor(-4,4,0.4,0.05)
 ```
 
 ## MPB & RS
 
 ## The use of a proxy
 
-## Bias 
+## Bias
 
-## Present study 
+## Present study
 
 # Material and methods
+
 ## Simulating a satellite dataset from a drone dataset
+
 The choice has been made to simulate coarser dataset from drone fine-scale
 
 # Results

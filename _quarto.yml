@@ -5,6 +5,7 @@ manuscript:
   article: index.qmd
 
 format:
+  pdf: default
   html:
     comments:
       hypothesis: true
@@ -15,8 +16,6 @@ format:
             text-align: justify;
           }
         </style>
-  docx: default
-  pdf: default
 
 execute:
   freeze: true
