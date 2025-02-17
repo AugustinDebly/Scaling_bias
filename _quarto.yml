@@ -18,4 +18,4 @@ format:
         </style>
 
 execute:
-  freeze: true
+  freeze: auto
