@@ -26,6 +26,11 @@ The MPB exhibits spatial variability at different scales
 ```{r}
 #| label: fig-resolutions
 #| fig-cap: "Resolutions of x different sensors cross represented with the different spatial scales of MPB"
+#| out.width: "100%"
+#| cache: false
+#| echo: false
+#| eval: true
+#| warning: false
 
 xmin = -7
 xmax = 5
