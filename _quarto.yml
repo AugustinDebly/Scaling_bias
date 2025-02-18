@@ -15,8 +15,8 @@ format:
             text-align: justify;
           }
         </style>
-    self-contained: false
     fig-format: svg
   pdf: default
+
 render: 
   - "index.qmd"

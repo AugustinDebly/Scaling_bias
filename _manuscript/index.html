@@ -68,6 +68,35 @@ div.csl-indent {
   }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta name="citation_title" content="Analyzing Satellite Scaling Bias Using Drone Data, Application to Microphytobenthos Studies">
 <meta name="citation_author" content="Augustin Debly">
@@ -382,6 +411,7 @@ div.csl-indent {
   <li><a href="#material-and-methods" id="toc-material-and-methods" class="nav-link" data-scroll-target="#material-and-methods">Material and methods</a>
   <ul class="collapse">
   <li><a href="#simulating-a-satellite-dataset-from-a-drone-dataset" id="toc-simulating-a-satellite-dataset-from-a-drone-dataset" class="nav-link" data-scroll-target="#simulating-a-satellite-dataset-from-a-drone-dataset">Simulating a satellite dataset from a drone dataset</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
@@ -416,7 +446,7 @@ div.csl-indent {
 <div id="fig-resolutions" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resolutions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-resolutions-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="index_files/figure-html/fig-resolutions-1.svg" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="index_files/figure-html/fig-resolutions-1.svg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/fig-resolutions-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-resolutions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Resolutions of x different sensors cross represented with the different spatial scales of MPB
@@ -431,6 +461,10 @@ Figure&nbsp;1: Resolutions of x different sensors cross represented with the dif
 </section>
 <section id="the-use-of-a-proxy" class="level2">
 <h2 class="anchored" data-anchor-id="the-use-of-a-proxy">The use of a proxy</h2>
+<p>NDVI can be transformed into biomass following <a href="#eq-NDVIB" class="quarto-xref">Equation&nbsp;1</a></p>
+<p><span id="eq-NDVIB"><span class="math display">\[
+B_{a,b,c}(NDVI) = \frac{1}{c}ln\left(\frac{b}{a+b-NDVI}\right)
+\tag{1}\]</span></span></p>
 </section>
 <section id="bias" class="level2">
 <h2 class="anchored" data-anchor-id="bias">Bias</h2>
@@ -444,6 +478,9 @@ Figure&nbsp;1: Resolutions of x different sensors cross represented with the dif
 <section id="simulating-a-satellite-dataset-from-a-drone-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="simulating-a-satellite-dataset-from-a-drone-dataset">Simulating a satellite dataset from a drone dataset</h2>
 <p>The choice has been made to simulate coarser dataset from drone fine-scale</p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 </section>
 </section>
 <section id="results" class="level1">
@@ -896,7 +933,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

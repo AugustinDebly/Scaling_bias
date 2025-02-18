@@ -213,7 +213,7 @@ The MPB exhibits spatial variability at different scales
 
 \centering{
 
-\includegraphics[width=1\textwidth,height=\textheight]{index_files/figure-pdf/fig-resolutions-1.pdf}
+\includegraphics{index_files/figure-pdf/fig-resolutions-1.pdf}
 
 }
 
@@ -230,6 +230,12 @@ Notebook}}
 
 \subsection{The use of a proxy}\label{the-use-of-a-proxy}
 
+NDVI can be transformed into biomass following Equation~\ref{eq-NDVIB}
+
+\begin{equation}\phantomsection\label{eq-NDVIB}{
+B_{a,b,c}(NDVI) = \frac{1}{c}ln\left(\frac{b}{a+b-NDVI}\right)
+}\end{equation}
+
 \subsection{Bias}\label{bias}
 
 \subsection{Present study}\label{present-study}
@@ -241,6 +247,8 @@ dataset}\label{simulating-a-satellite-dataset-from-a-drone-dataset}
 
 The choice has been made to simulate coarser dataset from drone
 fine-scale
+
+\subsection{}\label{section}
 
 \section{Results}\label{results}
 

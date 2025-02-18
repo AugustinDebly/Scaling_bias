@@ -188,7 +188,7 @@
   body {
     text-align: justify;
   }
-</style>  
+</style>   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
       <meta name="citation_title" content="Analyzing Satellite Scaling Bias Using Drone Data, Application to Microphytobenthos Studies">
 <meta name="citation_author" content="Augustin Debly">
 <meta name="citation_language" content="en">
@@ -509,6 +509,7 @@
   <li><a href="#material-and-methods" id="toc-material-and-methods" class="nav-link" data-scroll-target="#material-and-methods">Material and methods</a>
   <ul class="collapse">
   <li><a href="#simulating-a-satellite-dataset-from-a-drone-dataset" id="toc-simulating-a-satellite-dataset-from-a-drone-dataset" class="nav-link" data-scroll-target="#simulating-a-satellite-dataset-from-a-drone-dataset">Simulating a satellite dataset from a drone dataset</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
@@ -534,43 +535,70 @@
 <h2 class="anchored" data-anchor-id="spatial-structure">Spatial structure</h2>
 <p>The MPB exhibits spatial variability at different scales</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="cell-fig-resolutions" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xmin <span class="ot">=</span> <span class="sc">-</span><span class="dv">7</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>xmax <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ymin <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ymax <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>xmin <span class="ot">=</span> <span class="sc">-</span><span class="dv">7</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>xmax <span class="ot">=</span> <span class="dv">6</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ymin <span class="ot">=</span> <span class="sc">-</span><span class="dv">7</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ymax <span class="ot">=</span> <span class="dv">6</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(),<span class="fu">c</span>(),<span class="at">xlab =</span> <span class="st">"Spatial resolution"</span>,<span class="at">ylab =</span> <span class="st">""</span>,<span class="at">xaxt=</span><span class="st">"n"</span>,<span class="at">yaxt=</span><span class="st">"n"</span>,<span class="at">xlim=</span><span class="fu">c</span>(xmin,xmax),<span class="at">ylim =</span> <span class="fu">c</span>(ymin,ymax),<span class="at">xaxs=</span><span class="st">"i"</span>,<span class="at">yaxs=</span><span class="st">"i"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>npixmax <span class="ot">=</span> <span class="fl">1e4</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> <span class="dv">10</span><span class="sc">^</span>(<span class="fu">seq</span>(xmin,xmax))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> X){</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">log10</span>(<span class="fu">c</span>(x,x)),<span class="fu">c</span>(ymin,ymax),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>))</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span>X,<span class="dv">3</span><span class="sc">*</span>X,<span class="dv">4</span><span class="sc">*</span>X,<span class="dv">5</span><span class="sc">*</span>X,<span class="dv">6</span><span class="sc">*</span>X,<span class="dv">7</span><span class="sc">*</span>X,<span class="dv">8</span><span class="sc">*</span>X,<span class="dv">9</span><span class="sc">*</span>X)){</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">log10</span>(<span class="fu">c</span>(x,x)),<span class="fu">c</span>(ymin,ymax),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.1</span>))</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">c</span>(),<span class="fu">c</span>(),<span class="at">xlab =</span> <span class="st">"Resolution"</span>,<span class="at">ylab =</span> <span class="st">"Swath"</span>,<span class="at">xaxt=</span><span class="st">"n"</span>,<span class="at">yaxt=</span><span class="st">"n"</span>,<span class="at">xlim=</span><span class="fu">c</span>(xmin,xmax),<span class="at">ylim =</span> <span class="fu">c</span>(ymin,ymax),<span class="at">xaxs=</span><span class="st">"i"</span>,<span class="at">yaxs=</span><span class="st">"i"</span>,<span class="at">asp=</span> <span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>x_fond <span class="ot">&lt;-</span> <span class="fu">seq</span>(xmin, xmax, <span class="at">length.out =</span> <span class="dv">300</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>y_fond <span class="ot">&lt;-</span> <span class="fu">seq</span>(ymin, ymax, <span class="at">length.out =</span> <span class="dv">300</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>z_fond <span class="ot">&lt;-</span> <span class="fu">outer</span>(x_fond, y_fond, <span class="at">FUN =</span> <span class="cf">function</span>(x, y) (<span class="dv">10</span><span class="sc">^</span>y)<span class="sc">/</span>(<span class="dv">10</span><span class="sc">^</span>x))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">magma</span>(<span class="at">n =</span> <span class="dv">1000</span>,<span class="at">alpha =</span> <span class="fl">0.2</span>)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span><span class="fu">log10</span>(X),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"100 nm"</span>,<span class="st">"1 µm"</span>,<span class="st">"10 µm"</span>,<span class="st">"100 µm"</span>,<span class="st">"1 mm"</span>,<span class="st">"1 cm"</span>,<span class="st">"1 dm"</span>,<span class="st">"1 m"</span>,<span class="st">"10 m"</span>,<span class="st">"100 m"</span>,<span class="st">"1 km"</span>,<span class="st">"10 km"</span>,<span class="st">"100 km"</span>))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(x_fond, y_fond, <span class="fu">log10</span>(z_fond), <span class="at">col =</span> cols, <span class="at">zlim =</span> <span class="fu">log10</span>(<span class="fu">c</span>(<span class="dv">1</span>, npixmax)),<span class="at">add=</span>T)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plot_sensor <span class="ot">&lt;-</span> <span class="cf">function</span>(xmin_sensor,xmax_sensor,y,size_branche){</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(xmin_sensor,xmax_sensor),<span class="fu">c</span>(y,y))</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(xmin_sensor,xmin_sensor),<span class="fu">c</span>(y<span class="sc">-</span>size_branche<span class="sc">/</span><span class="dv">2</span>,y<span class="sc">+</span>size_branche<span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(xmax_sensor,xmax_sensor),<span class="fu">c</span>(y<span class="sc">-</span>size_branche<span class="sc">/</span><span class="dv">2</span>,y<span class="sc">+</span>size_branche<span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_sensor</span>(<span class="sc">-</span><span class="dv">6</span>,<span class="dv">2</span>,<span class="fl">0.1</span>,<span class="fl">0.05</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_sensor</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">3</span>,<span class="fl">0.2</span>,<span class="fl">0.05</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_sensor</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.3</span>,<span class="fl">0.05</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_sensor</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.4</span>,<span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>X    <span class="ot">=</span> <span class="dv">10</span><span class="sc">^</span>(<span class="fu">seq</span>(xmin,xmax))</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Y    <span class="ot">=</span> <span class="dv">10</span><span class="sc">^</span>(<span class="fu">seq</span>(ymin,ymax))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> X){</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">log10</span>(<span class="fu">c</span>(x,x)),<span class="fu">c</span>(ymin,ymax),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">3</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">4</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">5</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">6</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">7</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">8</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)],<span class="dv">9</span><span class="sc">*</span>X[<span class="sc">-</span><span class="fu">length</span>(X)])){</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">log10</span>(<span class="fu">c</span>(x,x)),<span class="fu">c</span>(ymin,ymax),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.1</span>))</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(y <span class="cf">in</span> Y){</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(xmin,xmax),<span class="fu">log10</span>(<span class="fu">c</span>(y,y)),<span class="at">lty=</span><span class="dv">1</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.2</span>))</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(y <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">3</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">4</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">5</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">6</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">7</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">8</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)],<span class="dv">9</span><span class="sc">*</span>Y[<span class="sc">-</span><span class="fu">length</span>(Y)])){</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(<span class="fu">c</span>(xmin,xmax),<span class="fu">log10</span>(<span class="fu">c</span>(y,y)),<span class="at">lty=</span><span class="dv">2</span>,<span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.1</span>))</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>,<span class="at">at=</span><span class="fu">log10</span>(X),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"100 nm"</span>,<span class="st">"1 µm"</span>,<span class="st">"10 µm"</span>,<span class="st">"100 µm"</span>,<span class="st">"1 mm"</span>,<span class="st">"1 cm"</span>,<span class="st">"1 dm"</span>,<span class="st">"1 m"</span>,<span class="st">"10 m"</span>,<span class="st">"100 m"</span>,<span class="st">"1 km"</span>,<span class="st">"10 km"</span>,<span class="st">"100 km"</span>,<span class="st">"1000 km"</span>),<span class="at">cex.axis=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>,<span class="at">at=</span><span class="fu">log10</span>(Y),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"100 nm"</span>,<span class="st">"1 µm"</span>,<span class="st">"10 µm"</span>,<span class="st">"100 µm"</span>,<span class="st">"1 mm"</span>,<span class="st">"1 cm"</span>,<span class="st">"1 dm"</span>,<span class="st">"1 m"</span>,<span class="st">"10 m"</span>,<span class="st">"100 m"</span>,<span class="st">"1 km"</span>,<span class="st">"10 km"</span>,<span class="st">"100 km"</span>,<span class="st">"1000 km"</span>),<span class="at">cex.axis=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(xmin,xmax,xmax,xmin), <span class="fu">c</span>(xmin,xmin,xmax,xmin), <span class="at">col =</span> <span class="st">"white"</span>, <span class="at">border =</span> <span class="st">"black"</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(xmin,<span class="fu">log10</span>((<span class="dv">10</span><span class="sc">^</span>ymax)<span class="sc">/</span>npixmax),xmin,xmin), <span class="fu">c</span>(<span class="fu">log10</span>(npixmax<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>xmin),ymax,ymax,<span class="fu">log10</span>(npixmax<span class="sc">*</span><span class="dv">10</span><span class="sc">^</span>xmin)), <span class="at">col =</span> <span class="st">"white"</span>, <span class="at">border =</span> <span class="st">"black"</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>H  <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">120</span>,<span class="fl">0.1</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>N  <span class="ot">=</span> <span class="dv">1088</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>SW <span class="ot">=</span> N<span class="sc">*</span><span class="fl">0.00345</span><span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>FR <span class="ot">=</span> <span class="fl">5.5</span><span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>DW <span class="ot">=</span> H<span class="sc">*</span>SW<span class="sc">/</span>FR</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>SR <span class="ot">=</span> DW<span class="sc">/</span>N</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">log10</span>(SR),<span class="fu">log10</span>(DW))</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(<span class="fu">min</span>(<span class="fu">log10</span>(SR)),<span class="fu">max</span>(<span class="fu">log10</span>(SR))),<span class="fu">c</span>(<span class="fu">min</span>(<span class="fu">log10</span>(DW)),<span class="fu">max</span>(<span class="fu">log10</span>(DW))))</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>liste_res_sat <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>liste_cov_sat <span class="ot">=</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-resolutions" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resolutions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="index_files/figure-html/fig-resolutions-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="index_files/figure-html/fig-resolutions-1.svg" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="index_files/figure-html/fig-resolutions-1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="index_files/figure-html/fig-resolutions-1.svg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-resolutions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Resolutions of x different sensors cross represented with the different spatial scales of MPB
@@ -585,6 +613,10 @@ Figure&nbsp;1: Resolutions of x different sensors cross represented with the dif
 </section>
 <section id="the-use-of-a-proxy" class="level2">
 <h2 class="anchored" data-anchor-id="the-use-of-a-proxy">The use of a proxy</h2>
+<p>NDVI can be transformed into biomass following <a href="#eq-NDVIB" class="quarto-xref">Equation&nbsp;1</a></p>
+<p><span id="eq-NDVIB"><span class="math display">\[
+B_{a,b,c}(NDVI) = \frac{1}{c}ln\left(\frac{b}{a+b-NDVI}\right)
+\tag{1}\]</span></span></p>
 </section>
 <section id="bias" class="level2">
 <h2 class="anchored" data-anchor-id="bias">Bias</h2>
@@ -598,6 +630,9 @@ Figure&nbsp;1: Resolutions of x different sensors cross represented with the dif
 <section id="simulating-a-satellite-dataset-from-a-drone-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="simulating-a-satellite-dataset-from-a-drone-dataset">Simulating a satellite dataset from a drone dataset</h2>
 <p>The choice has been made to simulate coarser dataset from drone fine-scale</p>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 </section>
 </section>
 <section id="results" class="level1">
@@ -1046,7 +1081,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

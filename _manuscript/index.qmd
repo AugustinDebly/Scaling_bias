@@ -26,49 +26,84 @@ The MPB exhibits spatial variability at different scales
 ```{r}
 #| label: fig-resolutions
 #| fig-cap: "Resolutions of x different sensors cross represented with the different spatial scales of MPB"
-#| out.width: "100%"
-#| cache: false
+#| fig-width: 10
+#| fig-height: 10
+#| cache: true
 #| echo: false
 #| eval: true
-#| warning: false
+#| warning: true
+
+library(viridis)
 
 xmin = -7
-xmax = 5
+xmax = 6
 
-ymin = 0
-ymax = 1
+ymin = -7
+ymax = 6
 
-par(mar = c(5,2,2,2))
+npixmax = 1e4
 
-plot(c(),c(),xlab = "Spatial resolution",ylab = "",xaxt="n",yaxt="n",xlim=c(xmin,xmax),ylim = c(ymin,ymax),xaxs="i",yaxs="i")
+par(mar = c(5,5,2,2))
 
-X = 10^(seq(xmin,xmax))
+plot(c(),c(),xlab = "Resolution",ylab = "Swath",xaxt="n",yaxt="n",xlim=c(xmin,xmax),ylim = c(ymin,ymax),xaxs="i",yaxs="i",asp= 1)
+
+x_fond <- seq(xmin, xmax, length.out = 300)
+y_fond <- seq(ymin, ymax, length.out = 300)
+z_fond <- outer(x_fond, y_fond, FUN = function(x, y) (10^y)/(10^x))
+
+cols <- magma(n = 1000,alpha = 0.2)
+
+image(x_fond, y_fond, log10(z_fond), col = cols, zlim = log10(c(1, npixmax)),add=T)
+
+X    = 10^(seq(xmin,xmax))
+Y    = 10^(seq(ymin,ymax))
 
 for(x in X){
   lines(log10(c(x,x)),c(ymin,ymax),lty=1,col=rgb(0,0,0,0.2))
 }
 
-for(x in c(2*X,3*X,4*X,5*X,6*X,7*X,8*X,9*X)){
+for(x in c(2*X[-length(X)],3*X[-length(X)],4*X[-length(X)],5*X[-length(X)],6*X[-length(X)],7*X[-length(X)],8*X[-length(X)],9*X[-length(X)])){
   lines(log10(c(x,x)),c(ymin,ymax),lty=2,col=rgb(0,0,0,0.1))
 }
 
-axis(1,at=log10(X),labels = c("100 nm","1 µm","10 µm","100 µm","1 mm","1 cm","1 dm","1 m","10 m","100 m","1 km","10 km","100 km"))
-
-plot_sensor <- function(xmin_sensor,xmax_sensor,y,size_branche){
-  lines(c(xmin_sensor,xmax_sensor),c(y,y))
-  lines(c(xmin_sensor,xmin_sensor),c(y-size_branche/2,y+size_branche/2))
-  lines(c(xmax_sensor,xmax_sensor),c(y-size_branche/2,y+size_branche/2))
+for(y in Y){
+  lines(c(xmin,xmax),log10(c(y,y)),lty=1,col=rgb(0,0,0,0.2))
 }
 
-plot_sensor(-6,2,0.1,0.05)
-plot_sensor(-5,3,0.2,0.05)
-plot_sensor(-4,4,0.3,0.05)
-plot_sensor(-4,4,0.4,0.05)
+for(y in c(2*Y[-length(Y)],3*Y[-length(Y)],4*Y[-length(Y)],5*Y[-length(Y)],6*Y[-length(Y)],7*Y[-length(Y)],8*Y[-length(Y)],9*Y[-length(Y)])){
+  lines(c(xmin,xmax),log10(c(y,y)),lty=2,col=rgb(0,0,0,0.1))
+}
+
+axis(1,at=log10(X),labels = c("100 nm","1 µm","10 µm","100 µm","1 mm","1 cm","1 dm","1 m","10 m","100 m","1 km","10 km","100 km","1000 km"),cex.axis=0.8)
+axis(2,at=log10(Y),labels = c("100 nm","1 µm","10 µm","100 µm","1 mm","1 cm","1 dm","1 m","10 m","100 m","1 km","10 km","100 km","1000 km"),cex.axis=0.8)
+
+polygon(c(xmin,xmax,xmax,xmin), c(xmin,xmin,xmax,xmin), col = "white", border = "black")
+polygon(c(xmin,log10((10^ymax)/npixmax),xmin,xmin), c(log10(npixmax*10^xmin),ymax,ymax,log10(npixmax*10^xmin)), col = "white", border = "black")
+
+H  = seq(12,120,0.1)
+N  = 1088
+SW = N*0.00345/1000
+FR = 5.5/1000
+DW = H*SW/FR
+SR = DW/N
+
+lines(log10(SR),log10(DW))
+points(c(min(log10(SR)),max(log10(SR))),c(min(log10(DW)),max(log10(DW))))
+
+liste_res_sat = c(10)
+liste_cov_sat = c()
+
 ```
 
 ## MPB & RS
 
 ## The use of a proxy
+
+NDVI can be transformed into biomass following [@eq-NDVIB]
+
+$$
+B_{a,b,c}(NDVI) = \frac{1}{c}ln\left(\frac{b}{a+b-NDVI}\right)
+$$ {#eq-NDVIB}
 
 ## Bias
 
@@ -79,6 +114,8 @@ plot_sensor(-4,4,0.4,0.05)
 ## Simulating a satellite dataset from a drone dataset
 
 The choice has been made to simulate coarser dataset from drone fine-scale
+
+## 
 
 # Results
 
